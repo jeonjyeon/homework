@@ -2,14 +2,28 @@
 
 > [마크다운 문법 공식 문서](https://daringfireball.net/projects/markdown/syntax)
 
-**목적**
+### | Philosophy
 
 - 글을 쉽게 읽고, 쓰고, 편집할 수 있도록 하는 것
 
-**제한 사항**
+### | Inline HTML
 
-- 블록 수준 HTML 요소는 주변 콘텐츠와 빈 줄로 구분해야 함.
+- 블록 수준 HTML 태그는 주변 내용과 빈 줄로 구분해야 함.
 - 시작 태그와 종료 태그는 탭이나 공백으로 들여쓰기하지 않아야 함.
+- 블록 태그 안에는 마크다운 문법이 적용되지 않음.
+
+### | Automatic Escaping for Special Characters
+
+- HTML에서는 <랑 & 같은 문자를 원래의 의미대로 쓰기 위해서는 &lt;, &amp; 같은 식으로 이스케이프를 해야 함.
+- 마크다운에서는 자동으로 처리
+
+```markdown
+AT&T → AT&amp;T
+
+4 < 5 → 4 &lt; 5
+```
+
+- 코드 블록이나 코드 스팬 안에서는 <와 &를 항상 자동으로 이스케이프하기 때문에 HTML 코드 예시를 적을 때도 편하게 쓸 수 있음.
 
 ## **Header**
 
