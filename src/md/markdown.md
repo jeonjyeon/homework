@@ -1,5 +1,7 @@
 # 마크다운 문법
 
+> [마크다운 문법 공식 문서](https://daringfireball.net/projects/markdown/syntax)
+
 **목적**
 
 - 글을 쉽게 읽고, 쓰고, 편집할 수 있도록 하는 것
