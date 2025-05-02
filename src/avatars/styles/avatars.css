@@ -10,20 +10,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
-  li {
-    display: inline-block;
-    width: 64px;
-    height: 64px;
-    margin: 20px;
-    position: relative;
+.avatars li {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 20px;
+  position: relative;
+}
 
-    img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-    }
-  }
+.avatars li img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
 }
 
 /* 상태 정보 */
