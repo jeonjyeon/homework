@@ -1,1 +1,51 @@
-<!-- HTML 마크업을 작성해 주세요 -->
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <link rel="preload" as="font" href="/public/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/public/font/suit/SUIT-Variable.css" />
+    <link rel="stylesheet" href="/src/common/index.css" />
+    <link rel="stylesheet" href="/src/login/styles/login.css" />
+  </head>
+  <body>
+    <a href="/index.html">메인 페이지 이동</a>
+    <br />
+    <h1>로그인</h1>
+    <br />
+    <!-- 네이버 로고 -->
+    <a href="https://www.naver.com/">
+      <img src="./naverLogo.svg" alt="네이버 로고" />
+    </a>
+    <!-- 입력 서식 컴포넌트 -->
+    <form action="/" method="GET">
+      <div class="form-input">
+        <label for="formInput-1"></label
+        ><input type="email" name="userEmail" id="formInput-1" required placeholder="아이디(이메일)" />
+      </div>
+      <div class="form-input">
+        <label for="formInput-2"></label
+          ><input type="password" name="userPwd" id="formInput-2" required placeholder="비밀번호"/>
+      </div>
+      <button class="fill-button" type="submit">로그인</button>
+      <div class="form-checkbox">
+        <input type="checkbox" name="loginStay" id="formCheckbox-1" /
+        ><label for="formCheckbox-1">로그인 상태 유지</label>
+      </div>
+      <div class="form-radio">
+        <label for="formRadio-on">IP 보안</label
+          ><input type="radio" name="IPSecurity" id="formRadio-on" checked/>
+          <span>ON</span>
+      </div>
+      <div class="form-radio">
+        <label for="formRadio-off">IP 보안</label
+          ><input type="radio" name="IPSecurity" id="formRadio-off"/>
+          <span>OFF</span>
+      </div>
+    </form>
+  
+  </body>
+</html>
