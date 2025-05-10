@@ -32,25 +32,27 @@
         </div>
         <!-- 로그인 버튼 -->
         <button class="fill-button" type="submit">로그인</button>
-        <!-- 로그인 상태 유지 -->
-        <div class="form-checkbox unchecked">
-          <input type="checkbox" name="loginStay" id="formCheckbox-1" /
-          ><label for="formCheckbox-1">로그인 상태 유지</label>
-        </div>
-        <div class="form-checkbox checked">
-          <input type="checkbox" name="loginStay" id="formCheckbox-1" checked /
-          ><label for="formCheckbox-1">로그인 상태 유지</label>
-        </div>
-        <!-- IP 보안 ON OFF -->
-        <div class="form-radio on">
-          <label for="formRadio-on"><a href="./pages/ip_security.html">IP 보안</a></label
-            ><input type="radio" name="IPSecurity" id="formRadio-on" checked/>
-            <span>ON</span>
-        </div>
-        <div class="form-radio off">
-          <label for="formRadio-off"><a href="./pages/ip_security.html">IP 보안</a></label
-            ><input type="radio" name="IPSecurity" id="formRadio-off"/>
-            <span>OFF</span>
+        <div class="switch-ui">
+          <!-- 로그인 상태 유지 -->
+          <div class="form-checkbox unchecked">
+            <input type="checkbox" name="loginStay" id="formCheckbox-1" /
+            ><label for="formCheckbox-1">로그인 상태 유지</label>
+          </div>
+          <!-- <div class="form-checkbox checked">
+            <input type="checkbox" name="loginStay" id="formCheckbox-1" checked /
+            ><label for="formCheckbox-1">로그인 상태 유지</label>
+          </div> -->
+          <!-- IP 보안 ON OFF -->
+          <div class="form-radio on">
+            <label for="formRadio-on"><a href="./pages/ip_security.html">IP 보안</a></label
+              ><input type="radio" name="IPSecurity" id="formRadio-on" checked/>
+              <span>ON</span>
+          </div>
+          <div class="form-radio off">
+            <label for="formRadio-off"><a href="./pages/ip_security.html">IP 보안</a></label
+              ><input type="radio" name="IPSecurity" id="formRadio-off"/>
+              <span>OFF</span>
+          </div>
         </div>
       </form>
     </div>

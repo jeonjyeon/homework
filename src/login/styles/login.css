@@ -16,17 +16,15 @@
   --line-height: 1.3125rem;
 }
 
+/* 로고 */
 .logo{
-    margin-block-start: 4.375rem;
-    margin-block-end: 2.8125rem;
-
-  img{
-    width: 230px;
     /* 중앙 정렬 */
     margin: auto;
     display: block;
+    width: 230px;
 
-  }
+    margin-block-start: 4.375rem;
+    margin-block-end: 2.8125rem;
 }
 
 /* 입력 서식 컴포넌트 */
@@ -67,3 +65,38 @@
   font-size: var(--font-16);
   color: var(--white);
 }
+
+/* 로그인 상태 유지 */
+.form-checkbox{
+  font-size: var(--font-16);
+  color: var(--black);
+
+  /* 기본 스타일 숨기기 */
+  input[type="checkbox"]{
+    /* 키보드 접근 시 포커스 보이도록 */
+    appearance: none;
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 체크박스 커스텀 및 label과 연결*/
+   input[type="checkbox"] + label{
+    background-image: url(../images/unchecked.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+
+    line-height: 1.3125rem;
+    padding-left: 1.75rem;
+    
+    cursor: pointer; 
+  }
+ 
+  input[type="checkbox"]:checked + label{
+    background-image: url(../images/checked.svg);
+  } 
+}
+
