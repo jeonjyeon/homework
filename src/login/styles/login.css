@@ -289,12 +289,14 @@
     --input-color: var(--black);
 
     margin-block: var(--space-10);
+    margin-inline: var(--space-20);
 
     input {
       margin: auto;
       display: block;
-      width: calc(100% - 2.5rem);
+      width: 100%;
       height: 45px;
+      padding-inline: var(--space-14);
 
       font-size: var(--font-16);
       color: var(--input-color);
@@ -312,13 +314,11 @@
     .error-message {
       display: none;
       margin: auto;
-      width: calc(100% - 2.5rem);
-      margin-top: 7px;
+      width: 100%;
       padding-inline: var(--space-14);
 
       font-size: var(--font-16);
       color: var(--error-red);
-      /* line-height: 1.125rem; */
     }
 
     input:user-invalid + .error-message {
