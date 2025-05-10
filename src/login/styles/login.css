@@ -276,9 +276,10 @@
   /* 로고 */
   .logo {
     /* 중앙 정렬 */
-    display: block;
     margin: auto;
+    display: block;
     width: 230px;
+
     margin-block-start: 4.375rem;
     margin-block-end: 2.8125rem;
   }
@@ -286,28 +287,27 @@
   /* 입력 서식 컴포넌트 */
   .form-input {
     --input-color: var(--black);
+
     margin-block: var(--space-10);
 
     input {
-      display: block;
       margin: auto;
+      display: block;
       width: calc(100% - 2.5rem);
       height: 45px;
       padding: var(--space-14);
+
       font-size: var(--font-16);
       color: var(--input-color);
       border: 1px solid var(--white-red);
       background: var(--white);
+    }
 
-      &:focus {
-        outline: none; /* outline 숨김 처리 */
-        border-color: var(--green);
-        background: var(--white-blue);
-      }
-
-      &:user-invalid + .error-message {
-        display: block;
-      }
+    input:focus {
+      border-color: var(--green);
+      background: var(--white-blue);
+      /* outline 숨김 처리 */
+      outline: none;
     }
 
     .error-message {
@@ -316,16 +316,24 @@
       width: calc(100% - 2.5rem);
       margin-top: 7px;
       padding-inline: var(--space-14);
+
       font-size: var(--font-16);
       color: var(--error-red);
+      /* line-height: 1.125rem; */
+    }
+
+    input:user-invalid + .error-message {
+      display: block;
     }
 
     /* 768px 이상 스타일 */
-    @media (width >= 768px) {
+    @media (width>=768px) {
       input {
         max-width: 460px;
       }
+
       .error-message {
+        /* display: none; */
         max-width: 460px;
       }
     }
@@ -333,28 +341,31 @@
 
   /* 로그인 버튼 컴포넌트 */
   .fill-button {
-    display: block;
     margin: auto;
+    display: block;
     width: calc(100% - 2.5rem);
     height: 45px;
     margin-block-start: var(--space-20);
-    font-size: var(--font-16);
-    color: var(--white);
+
     background: var(--green);
     border: 0;
+    font-size: var(--font-16);
+    color: var(--white);
 
-    @media (width >= 768px) {
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
       max-width: 460px;
     }
   }
 
   /* 상태 유지, IP 보안 ON/OFF 스위치 UI */
   .switch-ui {
-    position: relative;
     margin-block-start: var(--space-10);
     margin-inline: var(--space-20);
+    position: relative;
 
-    @media (width >= 768px) {
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
       display: block;
       margin-inline: auto;
       max-width: 460px;
@@ -363,28 +374,35 @@
 
   /* 로그인 상태 유지 체크박스 */
   .unchecked {
-    position: absolute;
-    right: 0;
     font-size: var(--font-16);
     color: var(--black);
+    position: absolute;
+    right: 0;
 
+    /* 기본 스타일 숨기기 */
     input[type='checkbox'] {
+      /* 키보드 접근 시 포커스 보이도록 */
       appearance: none;
-      position: absolute;
       width: 24px;
       height: 24px;
+
+      position: absolute;
       margin: 0;
       padding: 0;
     }
 
+    /* 체크박스 커스텀 및 label과 연결*/
     input[type='checkbox'] + label {
       display: inline-block;
       height: 24px;
-      line-height: 24px;
-      padding-left: 1.8125rem;
+
       background-image: url(../images/unchecked.svg);
       background-repeat: no-repeat;
       background-size: 24px 24px;
+
+      line-height: 24px;
+      padding-left: 1.8125rem; /*24+5px*/
+
       cursor: pointer;
     }
 
@@ -392,7 +410,7 @@
       background-image: url(../images/checked.svg);
     }
 
-    @media (width >= 768px) {
+    @media (width>=768px) {
       left: 0;
     }
   }
@@ -401,27 +419,29 @@
   .off {
     display: none;
 
-    @media (width >= 768px) {
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
       display: inline;
       position: absolute;
       right: 0;
+
       font-size: var(--font-16);
       color: var(--black);
+      line-height: 21px;
 
       input[type='checkbox'] {
+        /* 키보드 접근 시 포커스 보이도록 */
         appearance: none;
-        position: absolute;
         width: 2em;
         height: 24px;
+
+        position: absolute;
         margin: 0;
         padding: 0;
+      }
 
-        cursor: pointer;
-        text-decoration: none;
-
-        &:checked {
-          width: 1.5em;
-        }
+      input[type='checkbox']:checked {
+        width: 1.5em;
       }
 
       .label-off {
@@ -434,15 +454,18 @@
         color: var(--green);
       }
 
-      input[type='checkbox']:checked + label {
-        .label-off {
-          display: none;
-        }
+      /* 체크박스 체크되면 상태 전환 */
+      input[type='checkbox']:checked + label .label-off {
+        display: none;
+      }
 
-        .label-on {
-          display: inline;
-        }
+      input[type='checkbox']:checked + label .label-on {
+        display: inline;
       }
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 }
