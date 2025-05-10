@@ -295,7 +295,6 @@
       display: block;
       width: calc(100% - 2.5rem);
       height: 45px;
-      padding: var(--space-14);
 
       font-size: var(--font-16);
       color: var(--input-color);
