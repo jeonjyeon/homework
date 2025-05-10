@@ -6,6 +6,7 @@
   --white-blue: #e9f0fd;
   --green: #03cf5d;
   --dark-blue: #24388d;
+  --gray: #999;
 
   /* 폰트 사이트, 여백 */
   --font-16: 1rem;
@@ -67,7 +68,7 @@
 }
 
 /* 로그인 상태 유지 */
-.form-checkbox{
+.unchecked{
   font-size: var(--font-16);
   color: var(--black);
 
@@ -85,12 +86,13 @@
 
   /* 체크박스 커스텀 및 label과 연결*/
    input[type="checkbox"] + label{
+    display: inline-block;
     background-image: url(../images/unchecked.svg);
     background-repeat: no-repeat;
     background-size: 24px 24px;
 
     line-height: 1.3125rem;
-    padding-left: 1.75rem;
+    padding-left: 1.8125rem; /*24+5px*/ 
     
     cursor: pointer; 
   }
@@ -99,4 +101,46 @@
     background-image: url(../images/checked.svg);
   } 
 }
+
+/* IP 보안 ON OFF */
+.off{
+  font-size: var(--font-16);
+  color: var(--black);
+  line-height: 21px;
+
+  input[type="checkbox"]{
+    /* 키보드 접근 시 포커스 보이도록 */
+    appearance: none;
+    width: 2em;
+    height: 24px;
+
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    
+  }
+  input[type="checkbox"]:checked{
+    width: 1.5em;
+  }
+  
+  .label-off {
+    display: inline;
+    color: var(--gray);
+  }
+  
+  .label-on {
+    display: none;
+    color: var(--green);
+  }
+
+  /* 체크박스 체크되면 상태 전환 */
+  input[type="checkbox"]:checked + label .label-off {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + label .label-on {
+    display: inline;
+  }
+}
+
 
