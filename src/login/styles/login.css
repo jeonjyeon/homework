@@ -11,6 +11,7 @@
   --font-16: 1rem;
   --space-5: .3125rem;
   --space-10: .625rem;
+  --space-14: .875rem;
   --space-20: 1.25rem;
   --line-height: 1.3125rem;
 }
@@ -28,6 +29,7 @@
   }
 }
 
+/* 입력 서식 컴포넌트 */
 .form-input{
   --input-color: var(--black);
 
@@ -36,6 +38,7 @@
     display: block;
     width: calc(100% - 2.5rem);
     height: 45px;
+    padding: var(--space-14);
 
     font-size: var(--font-16);
     color: var(--input-color);
@@ -45,8 +48,22 @@
 
   input:focus{
       border-color: var(--green);
-      background-color: var(--white-blue);
+      background: var(--white-blue);
       /* outline 숨김 처리 */
       outline: none;
     }
+}
+
+/* 로그인 버튼 컴포넌트 */
+.fill-button{
+  margin: auto;
+  display: block;
+  width: calc(100% - 2.5rem);
+  height: 45px;
+  margin-block-start: var(--space-20);
+
+  background: var(--green);
+  border: 0;
+  font-size: var(--font-16);
+  color: var(--white);
 }
