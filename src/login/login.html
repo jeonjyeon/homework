@@ -23,21 +23,18 @@
       <!-- 입력 서식 컴포넌트 -->
       <form action="/" method="GET">
         <div class="form-input">
-          <label for="formInput-1"></label
-          ><input type="email" name="userEmail" id="formInput-1" required placeholder="아이디(이메일)" />
+          <label for="formInput-1"></label><input type="email" name="userEmail" id="formInput-1" required placeholder="아이디(이메일)" />
+          <p class="error-message">아이디는 이메일 형식으로 입력해 주세요.</p>
         </div>
         <div class="form-input">
-          <label for="formInput-2"></label
-            ><input type="password" name="userPwd" id="formInput-2" required placeholder="비밀번호"/>
+          <label for="formInput-2"></label><input type="password" name="userPwd" id="formInput-2" required placeholder="비밀번호" minlength="10" />
+          <p class="error-message">비밀번호는 10자리 이상 입력해 주세요.</p>
         </div>
         <!-- 로그인 버튼 -->
         <button class="fill-button" type="submit">로그인</button>
         <div class="switch-ui">
           <!-- 로그인 상태 유지 -->
-          <div class="form-checkbox unchecked">
-            <input type="checkbox" name="loginStay" id="formCheckbox-1" /
-            ><label for="formCheckbox-1">로그인 상태 유지</label>
-          </div>
+          <div class="form-checkbox unchecked"><input type="checkbox" name="loginStay" id="formCheckbox-1" /><label for="formCheckbox-1">로그인 상태 유지</label></div>
           <!-- <div class="form-checkbox checked">
             <input type="checkbox" name="loginStay" id="formCheckbox-1" checked /
             ><label for="formCheckbox-1">로그인 상태 유지</label>
@@ -45,8 +42,7 @@
           <!-- IP 보안 ON OFF -->
           <div class="form-checkbox off">
             <a href="./pages/ip_security.html">IP 보안</a>
-            <input type="checkbox" name="IPSecurity" id="formCheckbox-off"/
-            ><label for="formCheckbox-off">
+            <input type="checkbox" name="IPSecurity" id="formCheckbox-off" /><label for="formCheckbox-off">
               <span class="label-off">OFF</span>
               <span class="label-on">ON</span>
             </label>
@@ -54,6 +50,5 @@
         </div>
       </form>
     </div>
-  
   </body>
 </html>

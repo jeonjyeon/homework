@@ -7,32 +7,33 @@
   --green: #03cf5d;
   --dark-blue: #24388d;
   --gray: #999;
+  --error-red: #ff1414;
 
   /* 폰트 사이트, 여백 */
   --font-16: 1rem;
-  --space-5: .3125rem;
-  --space-10: .625rem;
-  --space-14: .875rem;
+  --space-5: 0.3125rem;
+  --space-10: 0.625rem;
+  --space-14: 0.875rem;
   --space-20: 1.25rem;
   --line-height: 1.3125rem;
 }
 
 /* 로고 */
-.logo{
-    /* 중앙 정렬 */
-    margin: auto;
-    display: block;
-    width: 230px;
+/* .logo{
 
-    margin-block-start: 4.375rem;
-    margin-block-end: 2.8125rem;
-}
+  margin: auto;
+  display: block;
+  width: 230px;
+
+  margin-block-start: 4.375rem;
+  margin-block-end: 2.8125rem;
+} */
 
 /* 입력 서식 컴포넌트 */
-.form-input{
+/* .form-input {
   --input-color: var(--black);
 
-  input{
+  input {
     margin: auto;
     display: block;
     width: calc(100% - 2.5rem);
@@ -45,16 +46,16 @@
     background: var(--white);
   }
 
-  input:focus{
-      border-color: var(--green);
-      background: var(--white-blue);
-      /* outline 숨김 처리 */
-      outline: none;
-    }
-}
+  input:focus {
+    border-color: var(--green);
+    background: var(--white-blue);
+
+    outline: none;
+  }
+} */
 
 /* 로그인 버튼 컴포넌트 */
-.fill-button{
+/* .fill-button {
   margin: auto;
   display: block;
   width: calc(100% - 2.5rem);
@@ -65,16 +66,16 @@
   border: 0;
   font-size: var(--font-16);
   color: var(--white);
-}
+} */
 
 /* 로그인 상태 유지 */
-.unchecked{
+/* .unchecked {
   font-size: var(--font-16);
   color: var(--black);
 
-  /* 기본 스타일 숨기기 */
-  input[type="checkbox"]{
-    /* 키보드 접근 시 포커스 보이도록 */
+ 
+  input[type='checkbox'] {
+   
     appearance: none;
     width: 24px;
     height: 24px;
@@ -84,32 +85,32 @@
     padding: 0;
   }
 
-  /* 체크박스 커스텀 및 label과 연결*/
-   input[type="checkbox"] + label{
+  
+  input[type='checkbox'] + label {
     display: inline-block;
     background-image: url(../images/unchecked.svg);
     background-repeat: no-repeat;
     background-size: 24px 24px;
 
     line-height: 1.3125rem;
-    padding-left: 1.8125rem; /*24+5px*/ 
-    
-    cursor: pointer; 
+    padding-left: 1.8125rem;
+
+    cursor: pointer;
   }
- 
-  input[type="checkbox"]:checked + label{
+
+  input[type='checkbox']:checked + label {
     background-image: url(../images/checked.svg);
-  } 
-}
+  }
+} */
 
 /* IP 보안 ON OFF */
-.off{
+/* .off {
   font-size: var(--font-16);
   color: var(--black);
   line-height: 21px;
 
-  input[type="checkbox"]{
-    /* 키보드 접근 시 포커스 보이도록 */
+  input[type='checkbox'] {
+   
     appearance: none;
     width: 2em;
     height: 24px;
@@ -117,30 +118,224 @@
     position: absolute;
     margin: 0;
     padding: 0;
-    
   }
-  input[type="checkbox"]:checked{
+
+  input[type='checkbox']:checked {
     width: 1.5em;
   }
-  
+
   .label-off {
     display: inline;
     color: var(--gray);
   }
-  
+
   .label-on {
     display: none;
     color: var(--green);
   }
 
-  /* 체크박스 체크되면 상태 전환 */
-  input[type="checkbox"]:checked + label .label-off {
+
+  input[type='checkbox']:checked + label .label-off {
     display: none;
   }
 
-  input[type="checkbox"]:checked + label .label-on {
+  input[type='checkbox']:checked + label .label-on {
     display: inline;
   }
+} */
+
+/* 로그인 스타일링 총합 */
+.login-wrapper {
+  /* 모바일 스타일 */
+  /* 로고 */
+  .logo {
+    /* 중앙 정렬 */
+    margin: auto;
+    display: block;
+    width: 230px;
+
+    margin-block-start: 4.375rem;
+    margin-block-end: 2.8125rem;
+  }
+
+  /* 입력 서식 컴포넌트 */
+  .form-input {
+    --input-color: var(--black);
+
+    margin-block: var(--space-10);
+
+    input {
+      margin: auto;
+      display: block;
+      width: calc(100% - 2.5rem);
+      height: 45px;
+      padding: var(--space-14);
+
+      font-size: var(--font-16);
+      color: var(--input-color);
+      border: 1px solid var(--white-red);
+      background: var(--white);
+    }
+
+    input:focus {
+      border-color: var(--green);
+      background: var(--white-blue);
+      /* outline 숨김 처리 */
+      outline: none;
+    }
+
+    .error-message {
+      display: none;
+      margin: auto;
+      width: calc(100% - 2.5rem);
+      margin-top: 7px;
+      padding-inline: var(--space-14);
+
+      font-size: var(--font-16);
+      color: var(--error-red);
+      /* line-height: 1.125rem; */
+    }
+
+    input:user-invalid + .error-message {
+      display: block;
+    }
+
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
+      input {
+        max-width: 460px;
+      }
+
+      .error-message {
+        /* display: none; */
+        max-width: 460px;
+      }
+    }
+  }
+
+  /* 로그인 버튼 컴포넌트 */
+  .fill-button {
+    margin: auto;
+    display: block;
+    width: calc(100% - 2.5rem);
+    height: 45px;
+    margin-block-start: var(--space-20);
+
+    background: var(--green);
+    border: 0;
+    font-size: var(--font-16);
+    color: var(--white);
+
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
+      max-width: 460px;
+    }
+  }
+
+  /* 상태 유지, IP 보안 ON/OFF 스위치 UI */
+  .switch-ui {
+    margin-block-start: var(--space-10);
+    margin-inline: var(--space-20);
+    position: relative;
+
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
+      display: block;
+      margin-inline: auto;
+      max-width: 460px;
+    }
+  }
+
+  /* 로그인 상태 유지 체크박스 */
+  .unchecked {
+    font-size: var(--font-16);
+    color: var(--black);
+    position: absolute;
+    right: 0;
+
+    /* 기본 스타일 숨기기 */
+    input[type='checkbox'] {
+      /* 키보드 접근 시 포커스 보이도록 */
+      appearance: none;
+      width: 24px;
+      height: 24px;
+
+      position: absolute;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 체크박스 커스텀 및 label과 연결*/
+    input[type='checkbox'] + label {
+      display: inline-block;
+      height: 24px;
+
+      background-image: url(../images/unchecked.svg);
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+
+      line-height: 24px;
+      padding-left: 1.8125rem; /*24+5px*/
+
+      cursor: pointer;
+    }
+
+    input[type='checkbox']:checked + label {
+      background-image: url(../images/checked.svg);
+    }
+
+    @media (width>=768px) {
+      left: 0;
+    }
+  }
+
+  /* IP 보안 ON OFF */
+  .off {
+    display: none;
+
+    /* 768px 이상 스타일 */
+    @media (width>=768px) {
+      display: inline;
+      position: absolute;
+      right: 0;
+
+      font-size: var(--font-16);
+      color: var(--black);
+      line-height: 21px;
+
+      input[type='checkbox'] {
+        /* 키보드 접근 시 포커스 보이도록 */
+        appearance: none;
+        width: 2em;
+        height: 24px;
+
+        position: absolute;
+        margin: 0;
+        padding: 0;
+      }
+
+      input[type='checkbox']:checked {
+        width: 1.5em;
+      }
+
+      .label-off {
+        display: inline;
+        color: var(--gray);
+      }
+
+      .label-on {
+        display: none;
+        color: var(--green);
+      }
+
+      /* 체크박스 체크되면 상태 전환 */
+      input[type='checkbox']:checked + label .label-off {
+        display: none;
+      }
+
+      input[type='checkbox']:checked + label .label-on {
+        display: inline;
+      }
+    }
+  }
 }
-
-
