@@ -465,6 +465,7 @@
   }
 
   a {
-    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-color: var(--black);
   }
 }
