@@ -415,7 +415,9 @@
         height: 24px;
         margin: 0;
         padding: 0;
+
         cursor: pointer;
+        text-decoration: none;
 
         &:checked {
           width: 1.5em;
