@@ -1,1 +1,52 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  /* color */
+  --black: #121212;
+  --white: #fff;
+  --white-red: #dadada;
+  --white-blue: #e9f0fd;
+  --green: #03cf5d;
+  --dark-blue: #24388d;
+
+  /* 폰트 사이트, 여백 */
+  --font-16: 1rem;
+  --space-5: .3125rem;
+  --space-10: .625rem;
+  --space-20: 1.25rem;
+  --line-height: 1.3125rem;
+}
+
+.logo{
+    margin-block-start: 4.375rem;
+    margin-block-end: 2.8125rem;
+
+  img{
+    width: 230px;
+    /* 중앙 정렬 */
+    margin: auto;
+    display: block;
+
+  }
+}
+
+.form-input{
+  --input-color: var(--black);
+
+  input{
+    margin: auto;
+    display: block;
+    width: calc(100% - 2.5rem);
+    height: 45px;
+
+    font-size: var(--font-16);
+    color: var(--input-color);
+    border: 1px solid var(--white-red);
+    background: var(--white);
+  }
+
+  input:focus{
+      border-color: var(--green);
+      background-color: var(--white-blue);
+      /* outline 숨김 처리 */
+      outline: none;
+    }
+}
