@@ -1,3 +1,111 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.card {
+  inline-size: 100%;
+  block-size: var(--size);
+  padding-block-start: var(--large-spacing);
+
+  display: grid;
+  grid-template-rows: repeat(4, fit-content(100%));
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--small-spacing);
+  column-gap: var(--base-spacing);
+  justify-items: center;
+
+  position: relative; /*a태그 가장 위에 띄우기 위함*/
+
+  background-image: url(../webp/ipad_pro.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url('../webp/ipad_pro_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+  }
+}
+
+.card-header {
+  display: contents;
+  color: var(--white);
+
+  > h2 {
+    font-size: var(--large-text);
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  > h3 {
+    font-size: var(--base-text);
+    line-height: var(--line-normal);
+    margin-block-end: var(--x-small-spacing);
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
+  > p {
+    font-size: var(--small-text);
+    color: var(--gray);
+    grid-row: 3 /4;
+    grid-column: 1 / 3;
+  }
+}
+
+.card-buttons {
+  display: contents;
+  font-size: var(--xx-small-text);
+
+  > .fill-button,
+  .border-button {
+    padding-block: var(--x-small-spacing);
+    padding-inline: var(--small-spacing);
+    border: 1px solid var(--blue-200);
+    border-radius: 980px;
+  }
+
+  > .fill-button {
+    justify-self: end;
+    background-color: var(--blue-200);
+    color: var(--white);
+  }
+
+  > .border-button {
+    justify-self: start;
+    background-color: transparent;
+    color: var(--blue-200);
+  }
+}
+
+/*a태그 가장 위에 띄우기 위함*/
+.card-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 3;
+}
+
+@media (width >=1024px) {
+  .card {
+    block-size: 650px;
+    padding-block-start: var(--extra-large-spacing);
+  }
+
+  .card-header {
+    > h2 {
+      font-size: var(--extra-large-text);
+    }
+
+    > h3 {
+      font-size: var(--medium-text);
+    }
+  }
+
+  .card-buttons {
+    font-size: var(--x-small-text);
+    inline-size: 44px;
+  }
+}
