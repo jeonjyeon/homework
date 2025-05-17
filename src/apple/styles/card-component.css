@@ -31,34 +31,66 @@
 
   .card-buttons > .fill-button,
   .border-button {
-    border: 1px solid var(--blue-200);
+    border: 1px solid var(--blue-400);
+
+    &:active {
+      background-color: var(--blue-400);
+    }
+  }
+
+  .fill-button {
+    background-color: var(--blue-400);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--blue-200);
+    }
+  }
+  .border-button {
+    background-color: transparent;
+    color: var(--blue-400);
+
+    &:hover {
+      background-color: var(--blue-200);
+      color: var(--white);
+    }
   }
 }
 
 .light {
   color: var(--black);
 
-  .card-buttons {
-    .fill-button,
-    .border-button {
-      border: 1px solid var(--black);
-    }
+  .card-buttons > .fill-button,
+  .border-button {
+    border: 1px solid var(--black);
 
-    .fill-button {
-      justify-self: end;
+    &:active {
       background-color: var(--black);
-      color: var(--white);
     }
-    .border-button {
-      justify-self: start;
-      background-color: transparent;
-      color: var(--black);
+  }
+
+  .fill-button {
+    background-color: var(--black);
+    color: var(--white);
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+  .border-button {
+    background-color: transparent;
+    color: var(--black);
+
+    &:hover {
+      background-color: #333;
+      color: var(--white);
     }
   }
 }
 
 .card-header {
   display: contents;
+  z-index: 1; /* card-link보다 위 */
 
   > h2 {
     font-size: var(--large-text);
@@ -94,6 +126,7 @@
 
   > .fill-button,
   .border-button {
+    z-index: 1; /* card-link보다 위 */
     padding-block: var(--x-small-spacing);
     padding-inline: var(--small-spacing);
     border-radius: 980px;
@@ -101,14 +134,10 @@
 
   > .fill-button {
     justify-self: end;
-    background-color: var(--blue-200);
-    color: var(--white);
   }
 
   > .border-button {
     justify-self: start;
-    background-color: transparent;
-    color: var(--blue-200);
   }
 }
 
@@ -120,7 +149,7 @@
   width: 100%;
   height: 100%;
 
-  z-index: 3;
+  z-index: 0;
 }
 
 @media (width >=1024px) {
