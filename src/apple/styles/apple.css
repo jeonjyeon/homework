@@ -1,3 +1,116 @@
-@import "./card-component.css";
+@import './card-component.css';
 
 /* 카드 레이아웃 */
+.card-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--base-spacing);
+
+  .card:nth-of-type(1) {
+    /* 첫 번째 카드 스타일 */
+    background-image: url(../webp/ipad_pro.webp);
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/ipad_pro_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+  }
+
+  .card:nth-of-type(2) {
+    /* 두 번째 카드 스타일 */
+    background-image: url(../webp/ipad_air.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/ipad_air_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+  }
+
+  .card:nth-of-type(3) {
+    /* 세 번째 카드 스타일 */
+    background-image: url(../webp/iphone15_pro.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/iphone15_pro_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+.card-layout .column-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--base-spacing);
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: var(--base-spacing);
+
+    .card {
+      block-size: 440px;
+      padding-block-start: var(--large-spacing);
+      row-gap: 0.3125rem;
+
+      h2 {
+        font-size: var(--large-text);
+      }
+
+      h3 {
+        font-size: var(--base-text);
+      }
+
+      .fill-button,
+      .border-button {
+        font-size: var(--xx-small-text);
+      }
+    }
+  }
+
+  .card:nth-of-type(1) {
+    background-image: url(../webp/iphone15.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/iphone15_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .card:nth-of-type(2) {
+    background-image: url(../webp/apple_watch.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/apple_watch_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .card:nth-of-type(3) {
+    background-image: url(../webp/macbook_air.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/macbook_air_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .card:nth-of-type(4) {
+    background-image: url(../webp/airpods_pro.webp);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../webp/airpods_pro_2x.webp'); /* 2배율 (Retina) 디바이스용 이미지 */
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
