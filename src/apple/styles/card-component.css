@@ -26,9 +26,16 @@
   }
 }
 
+.dark {
+  color: var(--white);
+}
+
+.light {
+  color: var(--black);
+}
+
 .card-header {
   display: contents;
-  color: var(--white);
 
   > h2 {
     font-size: var(--large-text);
